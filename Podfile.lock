@@ -1,0 +1,37 @@
+PODS:
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest
+    - ASIHTTPRequest/CloudFiles
+    - ASIHTTPRequest/Core
+    - ASIHTTPRequest/S3
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
+  - gtm-oauth2 (0.1.0):
+    - GTMHTTPFetcher
+  - GTMHTTPFetcher (0.1.0)
+  - Mixpanel-OSX-Community (2.0.0)
+  - socket.IO (0.5):
+    - SocketRocket (~> 0.2)
+  - SocketRocket (0.3.1-beta2)
+
+DEPENDENCIES:
+  - ASIHTTPRequest (~> 1.8)
+  - gtm-oauth2 (~> 0.1)
+  - Mixpanel-OSX-Community
+  - socket.IO (~> 0.5)
+
+SPEC CHECKSUMS:
+  ASIHTTPRequest: 4bd3ed65bf8a726292c5fa79ea5c0a2e02c97241
+  gtm-oauth2: ec43e283197a3c2eb14e1f3724a83fe2aeb45791
+  GTMHTTPFetcher: 1ec07b08bc1df7bf37ad32b3c2adefa020a4b644
+  Mixpanel-OSX-Community: b829ac6c8ea601849a2ce74a478b046ee661d3f1
+  socket.IO: 627782f3c7713a27dcf55679b5d4839f50428fe6
+  SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
+
+COCOAPODS: 0.29.0
