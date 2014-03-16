@@ -23,6 +23,9 @@
 		9209C19F18D5E15200F9B2CC /* icon-empty.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9209C19E18D5E15200F9B2CC /* icon-empty.icns */; };
 		9209C1A218D5E45D00F9B2CC /* BucketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1A118D5E45D00F9B2CC /* BucketClient.m */; };
 		9209C1A518D5E91600F9B2CC /* U.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1A418D5E91600F9B2CC /* U.m */; };
+		9209C1AC18D6475500F9B2CC /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1AA18D6475500F9B2CC /* MainWindow.m */; };
+		9209C1AD18D6475500F9B2CC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9209C1AB18D6475500F9B2CC /* MainWindow.xib */; };
+		9209C1B018D64B2F00F9B2CC /* FileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,11 @@
 		9209C1A118D5E45D00F9B2CC /* BucketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketClient.m; sourceTree = "<group>"; };
 		9209C1A318D5E91600F9B2CC /* U.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U.h; sourceTree = "<group>"; };
 		9209C1A418D5E91600F9B2CC /* U.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U.m; sourceTree = "<group>"; };
+		9209C1A918D6475500F9B2CC /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
+		9209C1AA18D6475500F9B2CC /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		9209C1AB18D6475500F9B2CC /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		9209C1AE18D64B2F00F9B2CC /* FileSizeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSizeTransformer.h; sourceTree = "<group>"; };
+		9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSizeTransformer.m; sourceTree = "<group>"; };
 		DD0885A975AA4132A97AEB12 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +139,8 @@
 		9209C16718D5CEA400F9B2CC /* Bucket */ = {
 			isa = PBXGroup;
 			children = (
+				9209C1AE18D64B2F00F9B2CC /* FileSizeTransformer.h */,
+				9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */,
 				9209C1A318D5E91600F9B2CC /* U.h */,
 				9209C1A418D5E91600F9B2CC /* U.m */,
 				9209C19518D5D0C200F9B2CC /* Icons */,
@@ -140,6 +150,9 @@
 				9209C16818D5CEA400F9B2CC /* Supporting Files */,
 				9209C1A018D5E45D00F9B2CC /* BucketClient.h */,
 				9209C1A118D5E45D00F9B2CC /* BucketClient.m */,
+				9209C1A918D6475500F9B2CC /* MainWindow.h */,
+				9209C1AA18D6475500F9B2CC /* MainWindow.m */,
+				9209C1AB18D6475500F9B2CC /* MainWindow.xib */,
 			);
 			path = Bucket;
 			sourceTree = "<group>";
@@ -249,6 +262,7 @@
 				9209C19718D5D0CE00F9B2CC /* bucket.icns in Resources */,
 				9209C16C18D5CEA400F9B2CC /* InfoPlist.strings in Resources */,
 				9209C17218D5CEA400F9B2CC /* Credits.rtf in Resources */,
+				9209C1AD18D6475500F9B2CC /* MainWindow.xib in Resources */,
 				9209C19918D5D44F00F9B2CC /* google.icns in Resources */,
 				9209C17818D5CEA500F9B2CC /* MainMenu.xib in Resources */,
 				9209C19F18D5E15200F9B2CC /* icon-empty.icns in Resources */,
@@ -304,6 +318,8 @@
 			files = (
 				9209C1A218D5E45D00F9B2CC /* BucketClient.m in Sources */,
 				9209C17518D5CEA400F9B2CC /* AppDelegate.m in Sources */,
+				9209C1B018D64B2F00F9B2CC /* FileSizeTransformer.m in Sources */,
+				9209C1AC18D6475500F9B2CC /* MainWindow.m in Sources */,
 				9209C16E18D5CEA400F9B2CC /* main.m in Sources */,
 				9209C1A518D5E91600F9B2CC /* U.m in Sources */,
 			);

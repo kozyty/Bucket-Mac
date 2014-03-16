@@ -48,5 +48,23 @@ static BucketClient* instance;
     return false;
 }
 
+- (NSArray *)getItems {
+    ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[self getURL:@"items"]]];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSDictionary* data = [NSJSONSerialization JSONObjectWithData:[[request responseString] dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+        if ([[data objectForKey:@"status"] isEqualToString:@"ok"]) {
+            NSMutableArray* items = [NSMutableArray new];
+            for (NSDictionary* json in [data objectForKey:@"items"]) {
+                NSMutableDictionary* item = [NSMutableDictionary dictionaryWithDictionary:json];
+                [items addObject:item];
+            }
+            return items;
+        }
+    }
+    NSLog(@"%@", error);
+    return nil;
+}
 
 @end
