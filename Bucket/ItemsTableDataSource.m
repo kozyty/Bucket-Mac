@@ -10,6 +10,11 @@
 
 @implementation ItemsTableDataSource
 
+- (void)setDoubleValue:(double)newProgress {
+}
+
+- (void)setMaxValue:(double)newMax {
+}
 
 - (NSArray *)tableView:(NSTableView *)tableView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)indexSet {
     NSLog(@"%@", dropDestination);
@@ -18,15 +23,20 @@
     NSMutableArray* targetPaths = [NSMutableArray new];
     
     [indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        NSDictionary* item = self.arrangedObjects[idx];
+        NSMutableDictionary* item = self.arrangedObjects[idx];
         NSString* name = item[@"name"];
 
         NSString* targetPath = [NSString stringWithFormat:@"%@/%@", destinationPath, name];
         [targetPaths addObject:targetPath];
         
         [U background:^{
-            NSData* data = [@"test" dataUsingEncoding:NSUTF8StringEncoding];
-            [data writeToFile:targetPath atomically:NO];
+            item[@"downloadRequest"] = [[BucketClient get] download:item :^(double progress) {
+                item[@"progress"] = [NSNumber numberWithDouble:progress];
+            }: ^(NSDictionary *item, NSData *data) {
+                [item setValue:nil forKey:@"progress"];
+                NSLog(@"Downloaded %@, %lu long, writing to %@", item[@"name"], (unsigned long)[data length], targetPath);
+                [data writeToFile:targetPath atomically:NO];
+            }];
         }];
     }];
     
