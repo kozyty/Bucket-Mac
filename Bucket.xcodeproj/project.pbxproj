@@ -26,6 +26,8 @@
 		9209C1AC18D6475500F9B2CC /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1AA18D6475500F9B2CC /* MainWindow.m */; };
 		9209C1AD18D6475500F9B2CC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9209C1AB18D6475500F9B2CC /* MainWindow.xib */; };
 		9209C1B018D64B2F00F9B2CC /* FileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */; };
+		9209C1B618D6DB8700F9B2CC /* ItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */; };
+		9209C1B918D6DF0C00F9B2CC /* ItemsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1B818D6DF0C00F9B2CC /* ItemsTableDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		9209C1AB18D6475500F9B2CC /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		9209C1AE18D64B2F00F9B2CC /* FileSizeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSizeTransformer.h; sourceTree = "<group>"; };
 		9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSizeTransformer.m; sourceTree = "<group>"; };
+		9209C1B418D6DB8700F9B2CC /* ItemsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsTableView.h; sourceTree = "<group>"; };
+		9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsTableView.m; sourceTree = "<group>"; };
+		9209C1B718D6DF0C00F9B2CC /* ItemsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsTableDataSource.h; sourceTree = "<group>"; };
+		9209C1B818D6DF0C00F9B2CC /* ItemsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsTableDataSource.m; sourceTree = "<group>"; };
 		DD0885A975AA4132A97AEB12 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,10 @@
 				9209C1A918D6475500F9B2CC /* MainWindow.h */,
 				9209C1AA18D6475500F9B2CC /* MainWindow.m */,
 				9209C1AB18D6475500F9B2CC /* MainWindow.xib */,
+				9209C1B418D6DB8700F9B2CC /* ItemsTableView.h */,
+				9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */,
+				9209C1B718D6DF0C00F9B2CC /* ItemsTableDataSource.h */,
+				9209C1B818D6DF0C00F9B2CC /* ItemsTableDataSource.m */,
 			);
 			path = Bucket;
 			sourceTree = "<group>";
@@ -321,6 +331,8 @@
 				9209C1B018D64B2F00F9B2CC /* FileSizeTransformer.m in Sources */,
 				9209C1AC18D6475500F9B2CC /* MainWindow.m in Sources */,
 				9209C16E18D5CEA400F9B2CC /* main.m in Sources */,
+				9209C1B618D6DB8700F9B2CC /* ItemsTableView.m in Sources */,
+				9209C1B918D6DF0C00F9B2CC /* ItemsTableDataSource.m in Sources */,
 				9209C1A518D5E91600F9B2CC /* U.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "ItemsTableDataSource.h"
 #import "BucketClient.h"
 #import "U.h"
 
