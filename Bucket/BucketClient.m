@@ -1,25 +1,20 @@
 #import "BucketClient.h"
 
+
+
 @implementation BucketClient
-
-static BucketClient* instance;
-
--(id)init {
-    self = [super init];
-    instance = self;
-    return self;
-}
-
-+(BucketClient*)get {
-    return instance;
-}
+SHARED_INSTANCE_GCD;
 
 -(NSString *)getURL:(NSString *)url {
     return [NSString stringWithFormat:@"https://bucket.im/%@", url];
 }
 
+-(AFHTTPRequestOperation*)obtainRequest:(NSString*)url {
+    return [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+}
+
 -(NSString*)authenticateWithToken:(NSString *)token {
-    AFHTTPRequestOperation* request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?token=%@", [self getURL:@"api/auth"], token]]]];
+    AFHTTPRequestOperation* request = [self obtainRequest:[NSString stringWithFormat:@"%@?token=%@", [self getURL:@"api/auth"], token]];
     [request start];
     [request waitUntilFinished];
     NSError *error = [request error];
@@ -35,8 +30,8 @@ static BucketClient* instance;
 
 
 -(BOOL)authenticateWithKey:(NSString *)key {
-    NSURLRequest* urlreq = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?key=%@&push-id=&device-id=osx:", [self getURL:@"api/auth"], key]]];
-    AFHTTPRequestOperation* request = [[AFHTTPRequestOperation alloc] initWithRequest:urlreq];
+    NSString* url = [NSString stringWithFormat:@"%@?key=%@&push-id=&device-id=osx:", [self getURL:@"api/auth"], key];
+    AFHTTPRequestOperation* request = [self obtainRequest:url];
     [request start];
     [request waitUntilFinished];
     NSError *error = [request error];
@@ -51,7 +46,7 @@ static BucketClient* instance;
 }
 
 - (NSArray *)getItems {
-    AFHTTPRequestOperation* request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[self getURL:@"api/items"]]]];
+    AFHTTPRequestOperation* request = [self obtainRequest:[self getURL:@"api/items"]];
     [request start];
     [request waitUntilFinished];
     NSError *error = [request error];
@@ -70,13 +65,22 @@ static BucketClient* instance;
     return nil;
 }
 
+-(void)deleteItem:(NSDictionary *)item {
+    AFHTTPRequestOperation* request = [self obtainRequest:[NSString stringWithFormat:@"%@/%@", [self getURL:@"api/delete"], item[@"id"]]];
+    [request start];
+    [request waitUntilFinished];
+}
+
 - (AFHTTPRequestOperation*)download:(NSDictionary*)item :(void(^)(double))progress :(void(^)(NSDictionary* item, NSData* data))callback {
-    AFHTTPRequestOperation* request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[self getURL:[NSString stringWithFormat:@"download/%@", item[@"id"]]]]]];
+    AFHTTPRequestOperation* request = [self obtainRequest:[self getURL:[NSString stringWithFormat:@"download/%@", item[@"id"]]]];
+    
     __weak AFHTTPRequestOperation* _request = request;
+    
     [request setDownloadProgressBlock:^(NSUInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {
-        NSLog(@"%lu / %lu", (ULONG)totalBytesRead, (ULONG)totalBytesExpectedToRead);
+        NSLog(@"%u / %u", (unsigned int)totalBytesRead, (unsigned int)totalBytesExpectedToRead);
         progress(1.0 * totalBytesRead / totalBytesExpectedToRead);
     }];
+    
     [request setCompletionBlock:^{
         if ([_request error] == nil)
             callback(item, [_request responseData]);

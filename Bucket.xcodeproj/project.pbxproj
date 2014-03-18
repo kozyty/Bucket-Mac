@@ -11,7 +11,6 @@
 		9209C16218D5CEA400F9B2CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9209C16118D5CEA400F9B2CC /* Cocoa.framework */; };
 		9209C16C18D5CEA400F9B2CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9209C16A18D5CEA400F9B2CC /* InfoPlist.strings */; };
 		9209C16E18D5CEA400F9B2CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C16D18D5CEA400F9B2CC /* main.m */; };
-		9209C17218D5CEA400F9B2CC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9209C17018D5CEA400F9B2CC /* Credits.rtf */; };
 		9209C17518D5CEA400F9B2CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C17418D5CEA400F9B2CC /* AppDelegate.m */; };
 		9209C17818D5CEA500F9B2CC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9209C17618D5CEA500F9B2CC /* MainMenu.xib */; };
 		9209C18118D5CEA500F9B2CC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9209C18018D5CEA500F9B2CC /* XCTest.framework */; };
@@ -19,8 +18,6 @@
 		9209C19718D5D0CE00F9B2CC /* bucket.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9209C19618D5D0CE00F9B2CC /* bucket.icns */; };
 		9209C19918D5D44F00F9B2CC /* google.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9209C19818D5D44F00F9B2CC /* google.icns */; };
 		9209C19B18D5DC4A00F9B2CC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9209C19A18D5DC4A00F9B2CC /* WebKit.framework */; };
-		9209C19D18D5E14900F9B2CC /* icon-full.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9209C19C18D5E14900F9B2CC /* icon-full.icns */; };
-		9209C19F18D5E15200F9B2CC /* icon-empty.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9209C19E18D5E15200F9B2CC /* icon-empty.icns */; };
 		9209C1A218D5E45D00F9B2CC /* BucketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1A118D5E45D00F9B2CC /* BucketClient.m */; };
 		9209C1A518D5E91600F9B2CC /* U.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1A418D5E91600F9B2CC /* U.m */; };
 		9209C1AC18D6475500F9B2CC /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1AA18D6475500F9B2CC /* MainWindow.m */; };
@@ -28,6 +25,10 @@
 		9209C1B018D64B2F00F9B2CC /* FileSizeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */; };
 		9209C1B618D6DB8700F9B2CC /* ItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */; };
 		9209C1B918D6DF0C00F9B2CC /* ItemsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9209C1B818D6DF0C00F9B2CC /* ItemsTableDataSource.m */; };
+		92B06E9D18D7960700A531CA /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B06E9C18D7960700A531CA /* TrayIcon.m */; };
+		92B06E9F18D7989D00A531CA /* tray-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B06E9E18D7989D00A531CA /* tray-full.png */; };
+		92B06EA118D798A300A531CA /* tray-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EA018D798A300A531CA /* tray-empty.png */; };
+		92B06EA718D892C700A531CA /* BucketRealtimeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B06EA618D892C700A531CA /* BucketRealtimeClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,6 @@
 		9209C16B18D5CEA400F9B2CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9209C16D18D5CEA400F9B2CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9209C16F18D5CEA400F9B2CC /* Bucket-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bucket-Prefix.pch"; sourceTree = "<group>"; };
-		9209C17118D5CEA400F9B2CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		9209C17318D5CEA400F9B2CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9209C17418D5CEA400F9B2CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9209C17718D5CEA500F9B2CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -60,8 +60,6 @@
 		9209C19618D5D0CE00F9B2CC /* bucket.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = bucket.icns; sourceTree = "<group>"; };
 		9209C19818D5D44F00F9B2CC /* google.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = google.icns; sourceTree = "<group>"; };
 		9209C19A18D5DC4A00F9B2CC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		9209C19C18D5E14900F9B2CC /* icon-full.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "icon-full.icns"; sourceTree = "<group>"; };
-		9209C19E18D5E15200F9B2CC /* icon-empty.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "icon-empty.icns"; sourceTree = "<group>"; };
 		9209C1A018D5E45D00F9B2CC /* BucketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketClient.h; sourceTree = "<group>"; };
 		9209C1A118D5E45D00F9B2CC /* BucketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketClient.m; sourceTree = "<group>"; };
 		9209C1A318D5E91600F9B2CC /* U.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U.h; sourceTree = "<group>"; };
@@ -75,6 +73,12 @@
 		9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsTableView.m; sourceTree = "<group>"; };
 		9209C1B718D6DF0C00F9B2CC /* ItemsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsTableDataSource.h; sourceTree = "<group>"; };
 		9209C1B818D6DF0C00F9B2CC /* ItemsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsTableDataSource.m; sourceTree = "<group>"; };
+		92B06E9B18D7960700A531CA /* TrayIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrayIcon.h; sourceTree = "<group>"; };
+		92B06E9C18D7960700A531CA /* TrayIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrayIcon.m; sourceTree = "<group>"; };
+		92B06E9E18D7989D00A531CA /* tray-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-full.png"; sourceTree = "<group>"; };
+		92B06EA018D798A300A531CA /* tray-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-empty.png"; sourceTree = "<group>"; };
+		92B06EA518D892C700A531CA /* BucketRealtimeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketRealtimeClient.h; sourceTree = "<group>"; };
+		92B06EA618D892C700A531CA /* BucketRealtimeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketRealtimeClient.m; sourceTree = "<group>"; };
 		DD0885A975AA4132A97AEB12 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,24 +149,27 @@
 		9209C16718D5CEA400F9B2CC /* Bucket */ = {
 			isa = PBXGroup;
 			children = (
-				9209C1AE18D64B2F00F9B2CC /* FileSizeTransformer.h */,
-				9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */,
-				9209C1A318D5E91600F9B2CC /* U.h */,
-				9209C1A418D5E91600F9B2CC /* U.m */,
-				9209C19518D5D0C200F9B2CC /* Icons */,
 				9209C17318D5CEA400F9B2CC /* AppDelegate.h */,
 				9209C17418D5CEA400F9B2CC /* AppDelegate.m */,
-				9209C17618D5CEA500F9B2CC /* MainMenu.xib */,
-				9209C16818D5CEA400F9B2CC /* Supporting Files */,
 				9209C1A018D5E45D00F9B2CC /* BucketClient.h */,
 				9209C1A118D5E45D00F9B2CC /* BucketClient.m */,
-				9209C1A918D6475500F9B2CC /* MainWindow.h */,
-				9209C1AA18D6475500F9B2CC /* MainWindow.m */,
-				9209C1AB18D6475500F9B2CC /* MainWindow.xib */,
-				9209C1B418D6DB8700F9B2CC /* ItemsTableView.h */,
-				9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */,
+				92B06EA518D892C700A531CA /* BucketRealtimeClient.h */,
+				92B06EA618D892C700A531CA /* BucketRealtimeClient.m */,
+				9209C1AE18D64B2F00F9B2CC /* FileSizeTransformer.h */,
+				9209C1AF18D64B2F00F9B2CC /* FileSizeTransformer.m */,
 				9209C1B718D6DF0C00F9B2CC /* ItemsTableDataSource.h */,
 				9209C1B818D6DF0C00F9B2CC /* ItemsTableDataSource.m */,
+				9209C1B418D6DB8700F9B2CC /* ItemsTableView.h */,
+				9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */,
+				9209C1A918D6475500F9B2CC /* MainWindow.h */,
+				9209C1AA18D6475500F9B2CC /* MainWindow.m */,
+				9209C1A318D5E91600F9B2CC /* U.h */,
+				9209C1A418D5E91600F9B2CC /* U.m */,
+				92B06E9B18D7960700A531CA /* TrayIcon.h */,
+				92B06E9C18D7960700A531CA /* TrayIcon.m */,
+				92B06EA418D891CF00A531CA /* UI */,
+				9209C16818D5CEA400F9B2CC /* Supporting Files */,
+				9209C19518D5D0C200F9B2CC /* Icons */,
 			);
 			path = Bucket;
 			sourceTree = "<group>";
@@ -174,7 +181,6 @@
 				9209C16A18D5CEA400F9B2CC /* InfoPlist.strings */,
 				9209C16D18D5CEA400F9B2CC /* main.m */,
 				9209C16F18D5CEA400F9B2CC /* Bucket-Prefix.pch */,
-				9209C17018D5CEA400F9B2CC /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,12 +188,21 @@
 		9209C19518D5D0C200F9B2CC /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				9209C19E18D5E15200F9B2CC /* icon-empty.icns */,
-				9209C19C18D5E14900F9B2CC /* icon-full.icns */,
+				92B06EA018D798A300A531CA /* tray-empty.png */,
+				92B06E9E18D7989D00A531CA /* tray-full.png */,
 				9209C19818D5D44F00F9B2CC /* google.icns */,
 				9209C19618D5D0CE00F9B2CC /* bucket.icns */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		92B06EA418D891CF00A531CA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9209C17618D5CEA500F9B2CC /* MainMenu.xib */,
+				9209C1AB18D6475500F9B2CC /* MainWindow.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,14 +283,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9209C19D18D5E14900F9B2CC /* icon-full.icns in Resources */,
 				9209C19718D5D0CE00F9B2CC /* bucket.icns in Resources */,
 				9209C16C18D5CEA400F9B2CC /* InfoPlist.strings in Resources */,
-				9209C17218D5CEA400F9B2CC /* Credits.rtf in Resources */,
 				9209C1AD18D6475500F9B2CC /* MainWindow.xib in Resources */,
+				92B06EA118D798A300A531CA /* tray-empty.png in Resources */,
 				9209C19918D5D44F00F9B2CC /* google.icns in Resources */,
 				9209C17818D5CEA500F9B2CC /* MainMenu.xib in Resources */,
-				9209C19F18D5E15200F9B2CC /* icon-empty.icns in Resources */,
+				92B06E9F18D7989D00A531CA /* tray-full.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,9 +345,11 @@
 				9209C1B018D64B2F00F9B2CC /* FileSizeTransformer.m in Sources */,
 				9209C1AC18D6475500F9B2CC /* MainWindow.m in Sources */,
 				9209C16E18D5CEA400F9B2CC /* main.m in Sources */,
+				92B06E9D18D7960700A531CA /* TrayIcon.m in Sources */,
 				9209C1B618D6DB8700F9B2CC /* ItemsTableView.m in Sources */,
 				9209C1B918D6DF0C00F9B2CC /* ItemsTableDataSource.m in Sources */,
 				9209C1A518D5E91600F9B2CC /* U.m in Sources */,
+				92B06EA718D892C700A531CA /* BucketRealtimeClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,14 +377,6 @@
 				9209C16B18D5CEA400F9B2CC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9209C17018D5CEA400F9B2CC /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9209C17118D5CEA400F9B2CC /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		9209C17618D5CEA500F9B2CC /* MainMenu.xib */ = {

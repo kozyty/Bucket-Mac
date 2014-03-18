@@ -29,15 +29,7 @@
         NSString* targetPath = [NSString stringWithFormat:@"%@/%@", destinationPath, name];
         [targetPaths addObject:targetPath];
         
-        [U background:^{
-            item[@"downloadRequest"] = [[BucketClient get] download:item :^(double progress) {
-                item[@"progress"] = [NSNumber numberWithDouble:progress];
-            }: ^(NSDictionary *item, NSData *data) {
-                [item setValue:nil forKey:@"progress"];
-                NSLog(@"Downloaded %@, %lu long, writing to %@", item[@"name"], (unsigned long)[data length], targetPath);
-                [data writeToFile:targetPath atomically:NO];
-            }];
-        }];
+        [[AppDelegate sharedInstance] startDownload:item:targetPath];
     }];
     
     return targetPaths;

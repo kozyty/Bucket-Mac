@@ -8,6 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindow">
             <connections>
                 <outlet property="_arrayController" destination="qzR-nd-Ufz" id="0Ku-hD-wpg"/>
+                <outlet property="_statusIndicator" destination="M6p-on-tOR" id="wb8-8q-XsT"/>
+                <outlet property="_tableView" destination="nh5-Tp-W2Q" id="iuF-Qd-cXY"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="10f-Gb-NiA"/>
             </connections>
         </customObject>
@@ -29,7 +31,7 @@
                             <rect key="frame" x="1" y="1" width="284" height="322"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="nh5-Tp-W2Q" customClass="ItemsTableView">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="nh5-Tp-W2Q" customClass="ItemsTableView">
                                     <rect key="frame" x="0.0" y="0.0" width="284" height="322"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -94,7 +96,7 @@
                                                             </connections>
                                                         </textField>
                                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="1" displayedWhenStopped="NO" bezeled="NO" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-GU-8rH">
-                                                            <rect key="frame" x="257" y="20" width="16" height="16"/>
+                                                            <rect key="frame" x="227" y="20" width="16" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <connections>
                                                                 <binding destination="4S1-qY-oMt" name="hidden" keyPath="objectValue.progress" id="13r-9C-eb0">
@@ -105,10 +107,23 @@
                                                                 <binding destination="4S1-qY-oMt" name="value" keyPath="objectValue.progress" id="i80-T2-Ylz"/>
                                                             </connections>
                                                         </progressIndicator>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-1f-HlH">
+                                                            <rect key="frame" x="258" y="18" width="21" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="recessed" bezelStyle="recessed" image="NSStopProgressTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3ow-zn-wDC">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="systemBold" size="12"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="deleteItem:" target="-2" id="z92-Pu-WBg"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="AnS-KP-Vu2" firstAttribute="top" secondItem="8Db-eu-hGM" secondAttribute="top" id="2Ll-CL-ycO"/>
+                                                        <constraint firstAttribute="centerY" secondItem="ic9-1f-HlH" secondAttribute="centerY" id="5n9-Qv-9Sy"/>
                                                         <constraint firstAttribute="bottom" secondItem="AnS-KP-Vu2" secondAttribute="bottom" constant="17" id="8pr-iA-DtS"/>
+                                                        <constraint firstItem="ic9-1f-HlH" firstAttribute="leading" secondItem="bkq-GU-8rH" secondAttribute="trailing" constant="15" id="9G0-0D-reX"/>
                                                         <constraint firstAttribute="centerY" secondItem="bkq-GU-8rH" secondAttribute="centerY" id="9ZO-Kp-JvN"/>
                                                         <constraint firstItem="AnS-KP-Vu2" firstAttribute="top" secondItem="4S1-qY-oMt" secondAttribute="top" constant="10" id="GV0-eT-FD5"/>
                                                         <constraint firstItem="DLg-ch-7Z7" firstAttribute="leading" secondItem="8Db-eu-hGM" secondAttribute="trailing" constant="8" id="UEv-nz-NWQ"/>
@@ -116,7 +131,7 @@
                                                         <constraint firstItem="8Db-eu-hGM" firstAttribute="leading" secondItem="4S1-qY-oMt" secondAttribute="leading" constant="10" id="ZRY-0e-CzY"/>
                                                         <constraint firstAttribute="centerY" secondItem="8Db-eu-hGM" secondAttribute="centerY" id="a2S-ZO-tQj"/>
                                                         <constraint firstItem="DLg-ch-7Z7" firstAttribute="top" secondItem="4S1-qY-oMt" secondAttribute="top" constant="26" id="lb6-50-TMY"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bkq-GU-8rH" secondAttribute="trailing" constant="10" id="qDa-nR-UXO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bkq-GU-8rH" secondAttribute="trailing" constant="40" id="qDa-nR-UXO"/>
                                                         <constraint firstAttribute="trailing" secondItem="DLg-ch-7Z7" secondAttribute="trailing" constant="4" id="vtw-3X-kMw"/>
                                                     </constraints>
                                                     <connections>
@@ -131,6 +146,7 @@
                                     </tableColumns>
                                     <connections>
                                         <outlet property="dataSource" destination="qzR-nd-Ufz" id="TPl-i6-pel"/>
+                                        <outlet property="delegate" destination="-2" id="6GF-gl-sXf"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -149,7 +165,7 @@
                         <rect key="frame" x="135" y="154" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
-                            <binding destination="-2" name="hidden" keyPath="loadingInProgress" id="Tjd-bc-Yvl">
+                            <binding destination="-2" name="hidden" keyPath="appDelegate.reloadingItems" id="wAv-bj-KrW">
                                 <dictionary key="options">
                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                 </dictionary>
@@ -176,9 +192,13 @@
                 <string>name</string>
                 <string>size</string>
             </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="appDelegate.items" id="sV8-Bv-z7w"/>
+            </connections>
         </arrayController>
     </objects>
     <resources>
+        <image name="NSStopProgressTemplate" width="11" height="11"/>
         <image name="bucket" width="512" height="512"/>
     </resources>
 </document>

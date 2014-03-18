@@ -1,11 +1,58 @@
 #import "AppDelegate.h"
-
+#import "MainWindow.h"
 
 @implementation AppDelegate
+static AppDelegate* _instance;
+
+SHARED_INSTANCE_GCD_USING_BLOCK(^{
+    return _instance;
+});
+
+-(void)reloadItems {
+    self.reloadingItems = @true;
+    [U background:^{
+        NSArray* items = [[BucketClient sharedInstance] getItems];
+        [U on_main:^{
+            self.items = items;
+            self.reloadingItems = @false;
+            [[TrayIcon sharedInstance] setFull:([items count] > 0)];
+        }];
+    }];
+}
+
+-(void)startDownload:(NSMutableDictionary *)item :(NSString *)targetPath {
+    [U background:^{
+        item[@"downloadRequest"] = [[BucketClient sharedInstance] download:item :^(double progress) {
+            item[@"progress"] = [NSNumber numberWithDouble:progress];
+        }: ^(NSDictionary *_, NSData *data) {
+            [item setValue:nil forKey:@"progress"];
+            NSLog(@"Downloaded %@, %lu long, writing to %@", item[@"name"], (unsigned long)[data length], targetPath);
+            [data writeToFile:targetPath atomically:NO];
+            
+            [item removeObjectForKey:@"progress"];
+            
+            NSUserNotification* notification = [NSUserNotification new];
+            [notification setTitle:@"Download complete"];
+            [notification setSubtitle:item[@"name"]];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+        }];
+    }];
+}
+
+//------------
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification
+{
+    return YES;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [BucketClient new];
+    _instance = self;
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    
     self.loginInProgress = @false;
     [self._statusIndicator startAnimation:self];
     
@@ -13,7 +60,7 @@
     if (key != nil) {
         self.loginInProgress = @true;
         [U background:^{
-            BOOL success = [[BucketClient get] authenticateWithKey:key];
+            BOOL success = [[BucketClient sharedInstance] authenticateWithKey:key];
             [U on_main:^{
                 if (success) {
                     [self signInDone];
@@ -22,6 +69,9 @@
             }];
         }];
     }
+    
+    [[TrayIcon sharedInstance] show:NO];
+    [[TrayIcon sharedInstance] setFull:NO];
 }
 
 NSString* kClientID = @"828226820573-2chvvi4qsvah229699ubhkh7g65dnv2a.apps.googleusercontent.com";
@@ -40,8 +90,12 @@ NSString* kClientSecret = @"-cx7Bpbj5EhN4_odlZpexJnP";
 
 - (void)signInDone {
     [self.window orderOut:self];
-    mainWindow = [MainWindow new];
-    [mainWindow showWindow:self];
+    
+    [[BucketRealtimeClient sharedInstance] connect];
+    
+    [[TrayIcon sharedInstance] show:YES];
+    [[MainWindow sharedInstance] showWindow:self];
+    [self reloadItems];
 }
 
 - (void)signIn:(GTMOAuth2SignIn *)signIn finishedWithAuth:(GTMOAuth2Authentication *)auth error:(NSError *)error {
@@ -51,7 +105,7 @@ NSString* kClientSecret = @"-cx7Bpbj5EhN4_odlZpexJnP";
     } else {
         [[NSUserDefaults standardUserDefaults] setObject:[auth accessToken] forKey:@"accessToken"];
         [U background:^{
-            NSString* key = [[BucketClient get] authenticateWithToken:[auth accessToken]];
+            NSString* key = [[BucketClient sharedInstance] authenticateWithToken:[auth accessToken]];
             [U on_main:^{
                 if (key != nil) {
                     [[NSUserDefaults standardUserDefaults] setObject:key forKey:@"accessKey"];
