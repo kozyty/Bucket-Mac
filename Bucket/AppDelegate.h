@@ -15,6 +15,10 @@
 @property NSNumber* reloadingItems;
 -(void)reloadItems;
 -(void)startDownload:(NSMutableDictionary*)item :(NSString*)targetPath;
+-(void)runUpload:(NSURL*)path;
+
+@property NSNumber* currentUploadProgress;
+@property NSString* currentUploadName;
 
 @property (assign) IBOutlet NSWindow *window;
 @property NSNumber *loginInProgress;

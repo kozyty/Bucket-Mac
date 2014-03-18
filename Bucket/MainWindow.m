@@ -9,6 +9,7 @@ SHARED_INSTANCE_GCD;
     self = [super initWithWindowNibName:@"MainWindow"];
     if (self) {
         self.appDelegate = [AppDelegate sharedInstance];
+        uploadSheet = [UploadProgressSheet new];
     }
     return self;
 }
@@ -34,6 +35,15 @@ SHARED_INSTANCE_GCD;
         [[BucketClient sharedInstance] deleteItem:item];
         [[AppDelegate sharedInstance] reloadItems];
     }];
+}
+
+- (void)showUpload:(BOOL)visible {
+    if (visible) {
+        [NSApp beginSheet:uploadSheet.window modalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+    } else {
+        [NSApp endSheet:uploadSheet.window];
+        [uploadSheet.window orderOut:self];
+    }
 }
 
 @end

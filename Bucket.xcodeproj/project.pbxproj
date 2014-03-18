@@ -29,6 +29,8 @@
 		92B06E9F18D7989D00A531CA /* tray-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B06E9E18D7989D00A531CA /* tray-full.png */; };
 		92B06EA118D798A300A531CA /* tray-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EA018D798A300A531CA /* tray-empty.png */; };
 		92B06EA718D892C700A531CA /* BucketRealtimeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B06EA618D892C700A531CA /* BucketRealtimeClient.m */; };
+		92B06EAA18D8E07000A531CA /* UploadProgressSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B06EA918D8E07000A531CA /* UploadProgressSheet.m */; };
+		92B06EAC18D8E09200A531CA /* UploadProgressSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EAB18D8E09200A531CA /* UploadProgressSheet.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,9 @@
 		92B06EA018D798A300A531CA /* tray-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-empty.png"; sourceTree = "<group>"; };
 		92B06EA518D892C700A531CA /* BucketRealtimeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketRealtimeClient.h; sourceTree = "<group>"; };
 		92B06EA618D892C700A531CA /* BucketRealtimeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketRealtimeClient.m; sourceTree = "<group>"; };
+		92B06EA818D8E07000A531CA /* UploadProgressSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadProgressSheet.h; sourceTree = "<group>"; };
+		92B06EA918D8E07000A531CA /* UploadProgressSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadProgressSheet.m; sourceTree = "<group>"; };
+		92B06EAB18D8E09200A531CA /* UploadProgressSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadProgressSheet.xib; sourceTree = "<group>"; };
 		DD0885A975AA4132A97AEB12 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +175,8 @@
 				92B06EA418D891CF00A531CA /* UI */,
 				9209C16818D5CEA400F9B2CC /* Supporting Files */,
 				9209C19518D5D0C200F9B2CC /* Icons */,
+				92B06EA818D8E07000A531CA /* UploadProgressSheet.h */,
+				92B06EA918D8E07000A531CA /* UploadProgressSheet.m */,
 			);
 			path = Bucket;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 			children = (
 				9209C17618D5CEA500F9B2CC /* MainMenu.xib */,
 				9209C1AB18D6475500F9B2CC /* MainWindow.xib */,
+				92B06EAB18D8E09200A531CA /* UploadProgressSheet.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 				9209C19718D5D0CE00F9B2CC /* bucket.icns in Resources */,
 				9209C16C18D5CEA400F9B2CC /* InfoPlist.strings in Resources */,
 				9209C1AD18D6475500F9B2CC /* MainWindow.xib in Resources */,
+				92B06EAC18D8E09200A531CA /* UploadProgressSheet.xib in Resources */,
 				92B06EA118D798A300A531CA /* tray-empty.png in Resources */,
 				9209C19918D5D44F00F9B2CC /* google.icns in Resources */,
 				9209C17818D5CEA500F9B2CC /* MainMenu.xib in Resources */,
@@ -347,6 +356,7 @@
 				9209C16E18D5CEA400F9B2CC /* main.m in Sources */,
 				92B06E9D18D7960700A531CA /* TrayIcon.m in Sources */,
 				9209C1B618D6DB8700F9B2CC /* ItemsTableView.m in Sources */,
+				92B06EAA18D8E07000A531CA /* UploadProgressSheet.m in Sources */,
 				9209C1B918D6DF0C00F9B2CC /* ItemsTableDataSource.m in Sources */,
 				9209C1A518D5E91600F9B2CC /* U.m in Sources */,
 				92B06EA718D892C700A531CA /* BucketRealtimeClient.m in Sources */,

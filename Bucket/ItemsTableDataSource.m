@@ -7,14 +7,11 @@
 //
 
 #import "ItemsTableDataSource.h"
+#import "MainWindow.h"
 
 @implementation ItemsTableDataSource
 
-- (void)setDoubleValue:(double)newProgress {
-}
 
-- (void)setMaxValue:(double)newMax {
-}
 
 - (NSArray *)tableView:(NSTableView *)tableView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)indexSet {
     NSLog(@"%@", dropDestination);
@@ -50,5 +47,32 @@
     return YES;
 }
 
+-(NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    return NSDragOperationCopy;
+}
+
+-(BOOL)tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
+    NSPasteboard* pasteboard = [info draggingPasteboard];
+    if ([[pasteboard types] containsObject:NSFilenamesPboardType])
+    {
+        NSData* data = [pasteboard dataForType:NSFilenamesPboardType];
+        if (data)
+        {
+            NSArray * filenames = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:nil error:nil];
+            [[MainWindow sharedInstance] showUpload:YES];
+            [U background:^{
+                for (NSString* filename in filenames) {
+                    NSLog(@"%@", filename);
+                    [[AppDelegate sharedInstance] runUpload:[NSURL fileURLWithPath:filename]];
+                }
+                [U on_main:^{
+                    [[MainWindow sharedInstance] showUpload:NO];
+                    [[AppDelegate sharedInstance] reloadItems];
+                }];
+            }];
+        }
+    }
+    return true;
+}
 
 @end

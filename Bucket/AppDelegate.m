@@ -39,6 +39,16 @@ SHARED_INSTANCE_GCD_USING_BLOCK(^{
     }];
 }
 
+-(void)runUpload:(NSURL *)path {
+    self.currentUploadName = [path lastPathComponent];
+    [[[BucketClient sharedInstance] upload:path :^(double p) {
+        self.currentUploadProgress = [NSNumber numberWithDouble:p];
+    } :^{
+        self.currentUploadProgress = nil;
+        self.currentUploadName = nil;
+    }] waitUntilFinished];
+}
+
 //------------
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center

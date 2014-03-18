@@ -18,21 +18,21 @@
         <window title="Bucket" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="286" height="324"/>
+            <rect key="contentRect" x="196" y="240" width="290" height="324"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="286" height="324"/>
+                <rect key="frame" x="0.0" y="0.0" width="290" height="324"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="56" horizontalPageScroll="10" verticalLineScroll="56" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Na-2C-8uv">
-                        <rect key="frame" x="0.0" y="0.0" width="286" height="324"/>
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="324"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="Hd6-tE-5QU">
-                            <rect key="frame" x="1" y="1" width="284" height="322"/>
+                            <rect key="frame" x="1" y="1" width="288" height="322"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="nh5-Tp-W2Q" customClass="ItemsTableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="284" height="322"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="322"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -162,7 +162,7 @@
                         </scroller>
                     </scrollView>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="M6p-on-tOR">
-                        <rect key="frame" x="135" y="154" width="16" height="16"/>
+                        <rect key="frame" x="137" y="154" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
                             <binding destination="-2" name="hidden" keyPath="appDelegate.reloadingItems" id="wAv-bj-KrW">
