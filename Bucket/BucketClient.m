@@ -80,6 +80,11 @@ SHARED_INSTANCE_GCD;
 }
 
 - (AFHTTPRequestOperation*)download:(NSDictionary*)item :(void(^)(double))progress :(void(^)(NSDictionary* item, NSData* data))callback {
+    if (![item[@"type"] isEqualToNumber:@0]) {
+        callback(item, [item[@"text"] dataUsingEncoding:NSUTF8StringEncoding]);
+        return nil;
+    }
+    
     AFHTTPRequestOperation* request = [self obtainRequest:[self getURL:[NSString stringWithFormat:@"download/%@", item[@"id"]]]];
     
     __weak AFHTTPRequestOperation* _request = request;

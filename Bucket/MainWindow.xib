@@ -31,7 +31,7 @@
                             <rect key="frame" x="1" y="1" width="288" height="322"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="nh5-Tp-W2Q" customClass="ItemsTableView">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnResizing="NO" autosaveColumns="NO" rowHeight="56" rowSizeStyle="automatic" viewBased="YES" id="nh5-Tp-W2Q" customClass="ItemsTableView">
                                     <rect key="frame" x="0.0" y="0.0" width="288" height="322"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -62,7 +62,10 @@
                                                                 <constraint firstAttribute="width" constant="36" id="411-8n-OeK"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="cMz-Lp-8Ve"/>
                                                             </constraints>
-                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="bucket" id="bGx-BT-FSp"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="item-file" id="bGx-BT-FSp"/>
+                                                            <connections>
+                                                                <binding destination="4S1-qY-oMt" name="value" keyPath="objectValue.icon" id="ULo-OP-g28"/>
+                                                            </connections>
                                                         </imageView>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AnS-KP-Vu2">
                                                             <rect key="frame" x="52" y="17" width="198" height="29"/>
@@ -145,6 +148,7 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
+                                        <action selector="openItem:" target="-2" id="EI4-Ko-hPh"/>
                                         <outlet property="dataSource" destination="qzR-nd-Ufz" id="TPl-i6-pel"/>
                                         <outlet property="delegate" destination="-2" id="6GF-gl-sXf"/>
                                     </connections>
@@ -199,6 +203,6 @@
     </objects>
     <resources>
         <image name="NSStopProgressTemplate" width="11" height="11"/>
-        <image name="bucket" width="512" height="512"/>
+        <image name="item-file" width="512" height="512"/>
     </resources>
 </document>

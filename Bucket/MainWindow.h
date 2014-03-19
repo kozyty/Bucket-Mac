@@ -19,6 +19,7 @@
 @property AppDelegate* appDelegate;
 - (id)init;
 - (void)toggle;
+- (IBAction)openItem:(id)sender;
 - (IBAction)deleteItem:(id)sender;
 - (void)showUpload:(BOOL)visible;
 @end

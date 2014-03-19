@@ -31,6 +31,9 @@
 		92B06EA718D892C700A531CA /* BucketRealtimeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B06EA618D892C700A531CA /* BucketRealtimeClient.m */; };
 		92B06EAA18D8E07000A531CA /* UploadProgressSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B06EA918D8E07000A531CA /* UploadProgressSheet.m */; };
 		92B06EAC18D8E09200A531CA /* UploadProgressSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EAB18D8E09200A531CA /* UploadProgressSheet.xib */; };
+		92B06EB018D983ED00A531CA /* item-text.icns in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EAF18D983ED00A531CA /* item-text.icns */; };
+		92B06EB218D9840B00A531CA /* item-file.icns in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EB118D9840B00A531CA /* item-file.icns */; };
+		92B06EB418D9841900A531CA /* item-url.icns in Resources */ = {isa = PBXBuildFile; fileRef = 92B06EB318D9841900A531CA /* item-url.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		92B06EA818D8E07000A531CA /* UploadProgressSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadProgressSheet.h; sourceTree = "<group>"; };
 		92B06EA918D8E07000A531CA /* UploadProgressSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadProgressSheet.m; sourceTree = "<group>"; };
 		92B06EAB18D8E09200A531CA /* UploadProgressSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadProgressSheet.xib; sourceTree = "<group>"; };
+		92B06EAF18D983ED00A531CA /* item-text.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "item-text.icns"; sourceTree = "<group>"; };
+		92B06EB118D9840B00A531CA /* item-file.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "item-file.icns"; sourceTree = "<group>"; };
+		92B06EB318D9841900A531CA /* item-url.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "item-url.icns"; sourceTree = "<group>"; };
 		DD0885A975AA4132A97AEB12 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,15 +174,15 @@
 				9209C1B518D6DB8700F9B2CC /* ItemsTableView.m */,
 				9209C1A918D6475500F9B2CC /* MainWindow.h */,
 				9209C1AA18D6475500F9B2CC /* MainWindow.m */,
-				9209C1A318D5E91600F9B2CC /* U.h */,
-				9209C1A418D5E91600F9B2CC /* U.m */,
 				92B06E9B18D7960700A531CA /* TrayIcon.h */,
 				92B06E9C18D7960700A531CA /* TrayIcon.m */,
+				9209C1A318D5E91600F9B2CC /* U.h */,
+				9209C1A418D5E91600F9B2CC /* U.m */,
+				92B06EA818D8E07000A531CA /* UploadProgressSheet.h */,
+				92B06EA918D8E07000A531CA /* UploadProgressSheet.m */,
 				92B06EA418D891CF00A531CA /* UI */,
 				9209C16818D5CEA400F9B2CC /* Supporting Files */,
 				9209C19518D5D0C200F9B2CC /* Icons */,
-				92B06EA818D8E07000A531CA /* UploadProgressSheet.h */,
-				92B06EA918D8E07000A531CA /* UploadProgressSheet.m */,
 			);
 			path = Bucket;
 			sourceTree = "<group>";
@@ -195,6 +201,9 @@
 		9209C19518D5D0C200F9B2CC /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				92B06EB318D9841900A531CA /* item-url.icns */,
+				92B06EB118D9840B00A531CA /* item-file.icns */,
+				92B06EAF18D983ED00A531CA /* item-text.icns */,
 				92B06EA018D798A300A531CA /* tray-empty.png */,
 				92B06E9E18D7989D00A531CA /* tray-full.png */,
 				9209C19818D5D44F00F9B2CC /* google.icns */,
@@ -295,10 +304,13 @@
 				9209C16C18D5CEA400F9B2CC /* InfoPlist.strings in Resources */,
 				9209C1AD18D6475500F9B2CC /* MainWindow.xib in Resources */,
 				92B06EAC18D8E09200A531CA /* UploadProgressSheet.xib in Resources */,
+				92B06EB218D9840B00A531CA /* item-file.icns in Resources */,
 				92B06EA118D798A300A531CA /* tray-empty.png in Resources */,
 				9209C19918D5D44F00F9B2CC /* google.icns in Resources */,
 				9209C17818D5CEA500F9B2CC /* MainMenu.xib in Resources */,
 				92B06E9F18D7989D00A531CA /* tray-full.png in Resources */,
+				92B06EB018D983ED00A531CA /* item-text.icns in Resources */,
+				92B06EB418D9841900A531CA /* item-url.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

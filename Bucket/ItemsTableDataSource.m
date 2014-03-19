@@ -19,9 +19,19 @@
     NSString* destinationPath = dropDestination.path;
     NSMutableArray* targetPaths = [NSMutableArray new];
     
+    __block int textFileIndex = 1;
+    
     [indexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         NSMutableDictionary* item = self.arrangedObjects[idx];
         NSString* name = item[@"name"];
+        if (![item[@"type"] isEqualToNumber:@0]) {
+            if (textFileIndex == 1) {
+                name = @"bucket.txt";
+            } else {
+                name = [NSString stringWithFormat:@"bucket %i.txt", textFileIndex];
+            }
+            textFileIndex++;
+        }
 
         NSString* targetPath = [NSString stringWithFormat:@"%@/%@", destinationPath, name];
         [targetPaths addObject:targetPath];
@@ -59,6 +69,7 @@
         if (data)
         {
             NSArray * filenames = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:nil error:nil];
+            
             [[MainWindow sharedInstance] showUpload:YES];
             [U background:^{
                 for (NSString* filename in filenames) {

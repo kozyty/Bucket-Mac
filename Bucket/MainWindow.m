@@ -29,6 +29,20 @@ SHARED_INSTANCE_GCD;
         [self.window makeKeyAndOrderFront:self];
 }
 
+-(void)openItem:(id)sender {
+    NSDictionary* item = [AppDelegate sharedInstance].items[[self._tableView clickedRow]];
+    if ([item[@"type"] isEqualToNumber:@1]) {
+        NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+        [pasteBoard declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil];
+        [pasteBoard setString:item[@"text"] forType:NSStringPboardType];
+        
+        [U displayNotification:@"Copied to clipboard" :item[@"name"]];
+    }
+    if ([item[@"type"] isEqualToNumber:@2]) {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:item[@"text"]]];
+    }
+}
+
 - (IBAction)deleteItem:(id)sender {
     NSDictionary* item = [AppDelegate sharedInstance].items[(long)[self._tableView rowForView:sender]];
     [U background:^{

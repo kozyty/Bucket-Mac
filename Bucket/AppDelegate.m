@@ -14,6 +14,15 @@ SHARED_INSTANCE_GCD_USING_BLOCK(^{
         NSArray* items = [[BucketClient sharedInstance] getItems];
         [U on_main:^{
             self.items = items;
+            
+            for (NSMutableDictionary* item in self.items) {
+                if ([item[@"type"] isEqualToNumber:@0])
+                    item[@"icon"] = [NSImage imageNamed:@"item-file.icns"];
+                if ([item[@"type"] isEqualToNumber:@1])
+                    item[@"icon"] = [NSImage imageNamed:@"item-text.icns"];
+                if ([item[@"type"] isEqualToNumber:@2])
+                    item[@"icon"] = [NSImage imageNamed:@"item-url.icns"];
+            }
             self.reloadingItems = @false;
             [[TrayIcon sharedInstance] setFull:([items count] > 0)];
         }];
@@ -22,7 +31,7 @@ SHARED_INSTANCE_GCD_USING_BLOCK(^{
 
 -(void)startDownload:(NSMutableDictionary *)item :(NSString *)targetPath {
     [U background:^{
-        item[@"downloadRequest"] = [[BucketClient sharedInstance] download:item :^(double progress) {
+        [[BucketClient sharedInstance] download:item :^(double progress) {
             item[@"progress"] = [NSNumber numberWithDouble:progress];
         }: ^(NSDictionary *_, NSData *data) {
             [item setValue:nil forKey:@"progress"];
@@ -30,11 +39,7 @@ SHARED_INSTANCE_GCD_USING_BLOCK(^{
             [data writeToFile:targetPath atomically:NO];
             
             [item removeObjectForKey:@"progress"];
-            
-            NSUserNotification* notification = [NSUserNotification new];
-            [notification setTitle:@"Download complete"];
-            [notification setSubtitle:item[@"name"]];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            [U displayNotification:@"Download complete":item[@"name"]];
         }];
     }];
 }

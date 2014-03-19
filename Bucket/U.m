@@ -21,6 +21,13 @@
     return [msg runModal] == NSAlertDefaultReturn;
 }
 
++ (void)displayNotification:(NSString *)title :(NSString *)description {
+    NSUserNotification* notification = [NSUserNotification new];
+    [notification setTitle:title];
+    [notification setSubtitle:description];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
 + (void) sheet: (NSString*)message :(NSWindow*) wnd {
     NSAlert* msg = [NSAlert new];
     [msg setMessageText:message];
