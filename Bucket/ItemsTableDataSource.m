@@ -83,6 +83,18 @@
             }];
         }
     }
+    
+    if ([[pasteboard types] containsObject:NSStringPboardType]) {
+        NSString* text = [pasteboard stringForType:NSStringPboardType];
+        [[MainWindow sharedInstance] showUpload:YES];
+        [U background:^{
+            [[AppDelegate sharedInstance] runTextUpload:text];
+            [U on_main:^{
+                [[MainWindow sharedInstance] showUpload:NO];
+                [[AppDelegate sharedInstance] reloadItems];
+            }];
+        }];
+    }
     return true;
 }
 

@@ -134,4 +134,25 @@ SHARED_INSTANCE_GCD;
     return request;
 }
 
+-(AFHTTPRequestOperation *)uploadText:(NSString *)text :(void (^)())callback {
+    NSNumber* type = ([NSURL URLWithString:text] == nil) ? @1 : @2;
+    NSDictionary* params = @{@"type": type, @"name": [text substringToIndex:20], @"text": text};
+    AFHTTPRequestOperation* request = [[AFHTTPRequestOperationManager new] POST:[self getURL:@"api/upload"] parameters:params constructingBodyWithBlock:nil success:nil failure:nil];
+    
+    __weak AFHTTPRequestOperation* _request = request;
+    
+    [request setCompletionBlock:^{
+        if ([_request error] == nil)
+            callback();
+        else {
+            NSError *error = [_request error];
+            NSLog(@"%@", error);
+            callback();
+        }
+    }];
+    [request start];
+    return request;
+}
+
+
 @end

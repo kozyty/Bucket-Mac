@@ -12,4 +12,5 @@
 -(void)deleteItem:(NSDictionary*)item;
 -(AFHTTPRequestOperation*)download:(NSDictionary*)item :(void(^)(double))progress :(void(^)(NSDictionary* item, NSData* data))callback;
 - (AFHTTPRequestOperation*)upload:(NSURL*)filePath :(void(^)(double))progress :(void(^)())callback;
+- (AFHTTPRequestOperation*)uploadText:(NSString*)text :(void(^)())callback;
 @end

@@ -54,6 +54,14 @@ SHARED_INSTANCE_GCD_USING_BLOCK(^{
     }] waitUntilFinished];
 }
 
+-(void)runTextUpload:(NSString *)text {
+    self.currentUploadName = @"Text";
+    [[[BucketClient sharedInstance] uploadText:text :^{
+        self.currentUploadName = nil;
+        self.currentUploadName = nil;
+    }] waitUntilFinished];
+}
+
 //------------
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center

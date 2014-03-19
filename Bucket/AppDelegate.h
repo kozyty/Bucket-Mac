@@ -16,6 +16,7 @@
 -(void)reloadItems;
 -(void)startDownload:(NSMutableDictionary*)item :(NSString*)targetPath;
 -(void)runUpload:(NSURL*)path;
+-(void)runTextUpload:(NSString*)text;
 
 @property NSNumber* currentUploadProgress;
 @property NSString* currentUploadName;
